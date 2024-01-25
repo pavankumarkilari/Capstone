@@ -1,0 +1,19 @@
+﻿@model BlogMVC.Models.Employee
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<h1> Employee Login Page</h1>
+
+@using (Html.BeginForm("Login", "Employee", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.EmailId)
+    @Html.TextBoxFor(model => model.EmailId)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.PassCode)
+    @Html.PasswordFor(model => model.PassCode)
+    <br />
+    <input type="submit" value="Login" />
+}

@@ -1,0 +1,22 @@
+﻿﻿
+@model BlogMVC.Models.Admin
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Admin Login Page</h1>
+@using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.EmailId)
+    @Html.TextBoxFor(model => model.EmailId)
+    <br /> <br />
+    @Html.LabelFor(model => model.Password)
+    @Html.PasswordFor(model => model.Password)
+    <br />
+    <input type="submit" value="Login" />
+
+    <form method="post" asp-action="Login">@* 
+        <button type="submit">Logout</button> *@
+    </form>
+
+}

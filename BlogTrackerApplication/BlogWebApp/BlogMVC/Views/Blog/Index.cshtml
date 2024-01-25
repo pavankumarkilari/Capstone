@@ -1,0 +1,23 @@
+﻿﻿
+@model IEnumerable<BlogMVC.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Blogs</h1>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">ASP.NET By :  @Html.DisplayFor(modelItem => item.EmpEmailId)</h5>
+                <p class="card-text">Date: @Html.DisplayFor(modelItem => item.DateOfCreation)</p>
+                <p>Subject: @Html.DisplayFor(modelItem => item.Subject)</p>
+                <a href="@Html.DisplayFor(modelItem => item.BlogUrl)" class="btn btn-primary">Visit</a>
+            </div>
+        </div>
+    </div>
+
+}
